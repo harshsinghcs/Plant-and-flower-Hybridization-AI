@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plant Hybridization</title>
+</head>
+<body>
+    <h1>Welcome to the Plant Hybridization Simulator!</h1>
+    <form method="POST">
+        <h2>Parent 1 Traits:</h2>
+        {% for trait in trait_names %}
+            {{ trait }}: <input type="text" name="parent1_{{ trait }}"><br>
+        {% endfor %}
+        
+        <h2>Parent 2 Traits:</h2>
+        {% for trait in trait_names %}
+            {{ trait }}: <input type="text" name="parent2_{{ trait }}"><br>
+        {% endfor %}
+        
+        <input type="submit" value="Hybridize">
+    </form>
+    
+    {% if parent1 %}
+        <h2>Parent 1 Traits:</h2>
+        <ul>
+            {% for trait in parent1.traits %}
+                <li>{{ trait }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Parent 2 Traits:</h2>
+        <ul>
+            {% for trait in parent2.traits %}
+                <li>{{ trait }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h2>Hybrid Child Traits:</h2>
+        <ul>
+            {% for trait in child.traits %}
+                <li>{{ trait }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
