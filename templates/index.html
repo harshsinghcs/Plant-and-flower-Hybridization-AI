@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="/static/stye.css">
     <title>Plant Hybridization</title>
 </head>
 <body>
-    <h1>Welcome to the Plant Hybridization Simulator!</h1>
-    <form method="POST">
-        <h2>Parent 1 Traits:</h2>
-        {% for trait in trait_names %}
-            {{ trait }}: <input type="text" name="parent1_{{ trait }}"><br>
-        {% endfor %}
-        
-        <h2>Parent 2 Traits:</h2>
-        {% for trait in trait_names %}
-            {{ trait }}: <input type="text" name="parent2_{{ trait }}"><br>
-        {% endfor %}
-        
-        <input type="submit" value="Hybridize">
-    </form>
-    
-    {% if parent1 %}
-        <h2>Parent 1 Traits:</h2>
-        <ul>
-            {% for trait in parent1.traits %}
-                <li>{{ trait }}</li>
-            {% endfor %}
-        </ul>
-        
-        <h2>Parent 2 Traits:</h2>
-        <ul>
-            {% for trait in parent2.traits %}
-                <li>{{ trait }}</li>
-            {% endfor %}
-        </ul>
-        
-        <h2>Hybrid Child Traits:</h2>
-        <ul>
-            {% for trait in child.traits %}
-                <li>{{ trait }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
+    <div class="container">
+        <h1>Welcome to the Plant Hybridization Simulator!</h1>
+        <form id="hybridize-form">
+            <div class="form-group">
+                <label for="parent1_height">Parent 1 Height:</label>
+                <input type="text" id="parent1_height" name="parent1_height">
+            </div>
+            <div class="form-group">
+                <label for="parent1_color">Parent 1 Color:</label>
+                <input type="text" id="parent1_color" name="parent1_color">
+            </div>
+            <!-- Add more form groups for other traits -->
+
+            <div class="form-group">
+                <label for="parent2_height">Parent 2 Height:</label>
+                <input type="text" id="parent2_height" name="parent2_height">
+            </div>
+            <div class="form-group">
+                <label for="parent2_color">Parent 2 Color:</label>
+                <input type="text" id="parent2_color" name="parent2_color">
+            </div>
+            <!-- Add more form groups for other traits -->
+
+            <button type="submit">Hybridize</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <h2>Parent 1 Traits:</h2>
+            <ul id="parent1-traits"></ul>
+
+            <h2>Parent 2 Traits:</h2>
+            <ul id="parent2-traits"></ul>
+
+            <h2>Hybrid Child Traits:</h2>
+            <ul id="child-traits"></ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
