@@ -8,7 +8,7 @@ class Plant:
         self.traits = traits
 
 def hybridize(parent1, parent2):
-    # Same hybridize function as before
+    # Implement your hybridization logic here
     pass
 
 @app.route("/", methods=["GET"])
