@@ -15,4 +15,4 @@ http://127.0.0.1:5000
 ```
 to access the plant hybridization web app.
 
-This example uses Flask for the web framework and integrates the plant hybridization code with a basic HTML form. When you fill out the form with parent traits and submit it, the hybridization process takes place, and the results are displayed on the same page. Remember that this is a simplified example, and in a real-world scenario, you'd want to handle form validation, improve the user interface, and possibly use more sophisticated genetic models for hybridization
+This example uses Flask for the web framework and integrates the plant hybridization code with a basic HTML form. When you fill out the form with parent traits and submit it, the hybridization process takes place, and the results are displayed on the same page. Remember that this is a simplified example, and in a real-world scenario, you'd want to handle form validation, improve the user interface, and possibly use more sophisticated genetic models for hybridization✨
